@@ -30,9 +30,9 @@ class VayVonController extends Controller
     }
 
     public function store(Request $request) {
-        $params = $request->only('name', 'image', 'detail_name', 'detail_image', 'detail_link', 'title', 'keywords', 'description', 'order');
+        $params = $request->all();
         $this->repository->store($params, $request);
-        return redirect()->back()->with('add-success', 'Added vayvon successfully !!!');
+        return redirect()->back()->with('add-success', 'Thêm vay vốn thành công !!!');
     }
 
     public function edit($id) {
@@ -41,20 +41,23 @@ class VayVonController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $params = $request->only('slug', 'name', 'image', 'detail_name', 'detail_image', 'detail_image_hidden', 'detail_link', 'title', 'keywords', 'description', 'order');
-        $this->repository->update($params, $request, $id);
-        return redirect()->back()->with('edit-success', 'Updated vayvon successfully !!!');
+        $params = $request->all();
+        $this->repository->update($params, $id);
+        return redirect()->back()->with('edit-success', 'Cập nhật vay vốn thành công !!!');
     }
 
     public function delete($id) {
         $this->repository->delete($id);
-        return redirect()->back()->with('delete-success', 'Deleted vayvon successfully !!!');
+        return redirect()->back()->with('delete-success', 'Xóa item thành công !!!');
+    }
+
+    public function deleteAll(Request $request) {
+        $this->repository->deleteAll($request->only('ids'));
+        return response()->json(['message' => 'Xóa các item thành công']);
     }
 
     public function import(Request $request, Excel $excel) {
         $data = $excel->import(new VayVonImport(), $request->file('file'));
-        return 2;
-        $data->insertVayVon();
-        return 1;
+        return redirect()->back()->with('import-success', 'Import thành công !!!');
     }
 }

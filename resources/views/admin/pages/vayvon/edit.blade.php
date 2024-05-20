@@ -10,7 +10,7 @@
         h1{
             color:green;
         }
-        .remove-product-detail{
+        .remove-vayvon-detail{
             cursor: pointer;
             color: darkred;
         }
@@ -26,7 +26,7 @@
                     <div class="col-12 mt-3">
                         <div class="card">
                             <div class="card-body">
-                                <form id="product-form" name="product-form" action="{{ route('admin-product-update', ['id'=> $product->id]) }}" enctype="multipart/form-data" method="POST">
+                                <form id="vayvon-form" name="vayvon-form" action="{{ route('admin-vayvon-update', ['id'=> $vayvon->id]) }}" enctype="multipart/form-data" method="POST">
                                     @csrf
                                     @if (session('edit-success'))
                                         <h5 class="action-message mb-2 text-success">{{ session('edit-success') }}</h5>
@@ -42,70 +42,93 @@
                                     @endif
                                     <div class="row form-group justify-content-between">
                                         <div>
-                                            <h4 class="header-title product-add-title">Edit products</h4>
+                                            <h4 class="header-title vayvon-add-title">Edit vayvons</h4>
                                         </div>
                                         <div>
-                                            <a class="btn btn-primary" href="{{route('admin-product')}}">
+                                            <a class="btn btn-primary" href="{{route('admin-vayvon')}}">
                                                 <i class="ti-list"></i><span>List</span>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col-md-8">
-                                            <label for="services" class="col-form-label">Name(*)</label>
-                                            <input type="text" class="form-control" name="name" placeholder="Name" required value="{{$product->name}}">
+                                        <div class="col-md-6">
+                                            <label for="services" class="col-form-label">Mã khoản vay</label>
+                                            <input type="text" class="form-control" name="code" placeholder="Mã khoản vay" value="{{$vayvon->code}}">
                                         </div>
-                                        <div class="col-md-4">
-                                            <label for="services" class="col-form-label">Image</label>
-                                            <input type="file" name="image" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <label for="services" class="col-form-label">Product details</label>
-                                        </div>
-                                    </div>
-                                    @foreach($product->productDetails as $detail)
-                                    <div class="row form-group product-detail">
-                                        <div class="col-md-4">
-                                            <label for="services" class="col-form-label">Name(*)</label>
-                                            <input type="text" class="form-control" name="detail_name[]" placeholder="Name" required value="{{$detail->name}}">
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label for="services" class="col-form-label">Image</label>
-                                            <input type="hidden" name="detail_image_hidden[]" value="{{$detail->image}}">
-                                            <input type="file" name="detail_image[]" class="form-control">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label for="services" class="col-form-label">Link</label>
-                                            <input type="text" class="form-control" name="detail_link[]" placeholder="Link" value="{{$detail->link}}">
-                                        </div>
-                                        <div class="remove-product-detail" title="Remove">
-                                            <span><i class="ti-trash"></i></span>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                    <div class="row form-group block-product-detail">
-                                        <div class="col-md-12">
-                                            <button type="button" class="btn btn-primary ti-plus add-product-detail">Add new product detail</button>
+                                        <div class="col-md-6">
+                                            <label for="services" class="col-form-label">Số điện thoại</label>
+                                            <input type="text" class="form-control" name="phone" placeholder="Số điện thoại" value="{{$vayvon->phone}}">
                                         </div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-md-12">
-                                            <label for="services" class="col-form-label">Title</label>
-                                            <input type="text" class="form-control" name="title" placeholder="Title" value="{{$product->title}}">
+                                            <label for="services" class="col-form-label">Họ tên khách hàng</label>
+                                            <input type="text" class="form-control" name="user_name" placeholder="Họ tên" value="{{$vayvon->user_name}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col-md-6">
+                                            <label for="services" class="col-form-label">Số lượng khoản vay</label>
+                                            <input type="text" class="form-control" name="amount_loan" placeholder="Số lượng" value="{{$vayvon->amount_loan}}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="services" class="col-form-label">Số tiền</label>
+                                            <input type="text" class="form-control" name="amount_money" placeholder="Số tiền" value="{{$vayvon->amount_money}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col-md-6">
+                                            <label for="services" class="col-form-label">Lãi suất</label>
+                                            <input type="text" class="form-control" name="interest_rate" placeholder="Lãi suất" value="{{$vayvon->interest_rate}}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="services" class="col-form-label">Miễn giảm</label>
+                                            <input type="text" class="form-control" name="except" placeholder="Miễn giảm" value="{{$vayvon->except}}">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-6">
+                                            <label for="services" class="col-form-label">Phí dịch vụ</label>
+                                            <input type="text" class="form-control" name="service_charge" placeholder="Phí dịch vụ" value="{{$vayvon->service_charge}}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="services" class="col-form-label">Số tiền phải trả</label>
+                                            <input type="text" class="form-control" name="money_pay" placeholder="Số tiền phải trả" value="{{$vayvon->money_pay}}">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-6">
+                                            <label for="services" class="col-form-label">Ngày vay</label>
+                                            <input type="date" class="form-control" name="loan_date" placeholder="Số lượng" value="{{$vayvon->loan_date}}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="services" class="col-form-label">Ngày trả</label>
+                                            <input type="date" class="form-control" name="pay_date" placeholder="Số tiền" value="{{$vayvon->pay_date}}">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group form-check ">
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" name="is_pay" {{$vayvon->is_pay ? 'checked' : ''}} type="checkbox" id="inlineCheckbox1" value="option1">
+                                            <label class="form-check-label" for="inlineCheckbox1">Thanh toán</label>
+                                        </div>
+                                        <div class="form-check form-check-inline ">
+                                            <input class="form-check-input" name="status" {{$vayvon->status ? 'checked' : ''}} type="checkbox" id="inlineCheckbox2" value="option2">
+                                            <label class="form-check-label"  for="inlineCheckbox2">Hiển thị</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <label for="services" class="col-form-label">STT </label>
+                                            <input type="text" class="form-control" name="stt" placeholder="STT" value="{{$vayvon->stt}}">
                                         </div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-md-12">
-                                            <label for="services" class="col-form-label">Keywords</label>
-                                            <textarea rows="3" cols="200" type="text" class="form-control" name="keywords" placeholder="Keywords"  >{{$product->keywords}}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col-md-12">
-                                            <label for="services" class="col-form-label">Description</label>
-                                            <textarea rows="3" cols="200" type="text" class="form-control" name="description" placeholder="Description"  >{{$product->description}}</textarea>
+                                            <label for="services" class="col-form-label">Ghi chú</label>
+                                            <textarea class="form-control" name="note" type="text" id="note">
+                                                {{$vayvon->note}}
+                                            </textarea>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Update</button>
@@ -121,35 +144,14 @@
     <script src=
                 "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" defer>
     </script>
+    <link rel="stylesheet" href="{{ asset('richtexteditor/rte_theme_default.css') }}" />
+    <script type="text/javascript" src="{{ asset('richtexteditor/rte.js') }}"></script>
+    <script type="text/javascript" src='{{ asset('richtexteditor/plugins/all_plugins.js') }}'></script>
     <script type="text/javascript">
+        var editor = new RichTextEditor("#note");
 
         $(document).ready(function() {
             $('.action-message').delay(5000).fadeOut();
-            $('.add-product-detail').on('click', function() {
-                $('.block-product-detail').before(
-                    '<div class="row form-group product-detail">' +
-                    '<div class="col-md-4">' +
-                    '<label for="services" class="col-form-label">Name(*)</label>' +
-                    '<input type="text" class="form-control" name="detail_name[]" placeholder="Name" required>' +
-                    '</div>' +
-                    '<div class="col-md-2">' +
-                    '<label for="services" class="col-form-label">Image</label>' +
-                    '<input type="file" name="detail_image[]" class="form-control">' +
-                    '</div>' +
-                    '<div class="col-md-4">' +
-                    '<label for="services" class="col-form-label">Link</label>' +
-                    '<input type="text" class="form-control" name="detail_link[]" placeholder="Link">' +
-                    '</div>' +
-                    '<div class="remove-product-detail" title="Remove">' +
-                    '<span><i class="ti-trash"></i></span>' +
-                    '</div>' +
-                    '</div>'
-                );
-            })
-
-            $('body').on('click', '.remove-product-detail', function() {
-                $(this).closest('.product-detail').remove();
-            })
         });
     </script>
 @endsection

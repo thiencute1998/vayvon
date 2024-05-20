@@ -15,6 +15,8 @@
             margin: auto;
         }
     </style>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 @endsection
 @section('main-content-inner')
     <div class="page-title-area collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
@@ -61,13 +63,16 @@
                     <div class="card-body">
                         <div class="row form-group justify-content-between">
                             <div >
-                                @if (session('delete-success'))
+                                @if (session('import-success'))
+                                    <h5 class="work-message mb-2 text-success">{{ session('import-success') }}</h5>
+                                @endif
+                                @if (session('import-success'))
                                     <h5 class="work-message mb-2 text-success">{{ session('delete-success') }}</h5>
                                 @endif
                                 <h4 class="header-title">Danh sách vay vốn</h4>
                             </div>
                             <div>
-                                <a class="btn btn-danger" href="{{route('admin-vayvon-create')}}">
+                                <a class="btn btn-danger trash-all">
                                     <i class="ti-trash"></i><span>Xóa tất cả</span>
                                 </a>
                                 <a class="btn btn-success" href="{{route('admin-vayvon-import')}}" data-toggle="modal" data-target="#fileImportModal">
@@ -84,7 +89,8 @@
                                     <thead class="text-uppercase">
                                     <tr>
                                         <th><input type="checkbox" id="checkAll"></th>
-                                        <th scope="col" style="width: 40%">Số điện thoại</th>
+                                        <th class="text-center" scope="col" style="width: 5%">STT</th>
+                                        <th scope="col" >Số điện thoại</th>
                                         <th scope="col">Họ tên</th>
                                         <th>Số tiền</th>
                                         <th>Thanh toán</th>
@@ -95,7 +101,10 @@
                                     <tbody>
                                     @foreach($vayvons as $vayvon)
                                         <tr>
-                                            <td><input type="checkbox" class="rowCheckbox"></td>
+                                            <td><input type="checkbox" class="rowCheckbox" data-id="{{$vayvon->id}}"></td>
+                                            <td class="text-left">
+                                                <input style="width: 50px" type="text" value="{{$vayvon->stt}}">
+                                            </td>
                                             <td class="text-left">
                                                 {{$vayvon->phone}}
                                             </td>
@@ -116,7 +125,7 @@
                                                     <i class="fa fa-edit"></i>
                                                 </a>
                                                 <a class="vayvon-remove" href="{{ route('admin-vayvon-delete', ['id'=> $vayvon->id]) }}"
-                                                   onclick="return confirm('Do you want to delete this vayvon?' )"
+                                                   onclick="return confirm('Bạn có muốn xóa item này?')"
                                                 >
                                                     <i class="ti-trash"></i>
                                                 </a>
@@ -181,6 +190,37 @@
                 } else {
                     $("#checkAll").prop('checked', false);
                 }
+            });
+
+            $('.trash-all').on('click', function() {
+                let allChecked = $('.rowCheckbox:checkbox:checked');
+                console.log(allChecked.length);
+                if (allChecked.length) {
+                    let ids = [];
+                    allChecked.each((key, value)=> {
+                        ids.push($(value).data('id'));
+                    })
+
+                    $.ajax({
+                        url: '{{ route("admin-vayvon-delete-all") }}',
+                        type: 'DELETE',
+                        data: {
+                            ids: ids,
+                            _token: $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(response) {
+                            alert(response.message)
+                            location.reload();
+                            // location.reload();
+                        },
+                        error: function(xhr) {
+                            console.log(xhr.responseText);
+                        }
+                    });
+                } else {
+                    alert('Chọn ít nhất 1 item');
+                }
+
             });
         })
     </script>

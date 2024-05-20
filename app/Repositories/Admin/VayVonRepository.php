@@ -13,8 +13,6 @@ use Illuminate\Support\Str;
 
 class VayVonRepository extends BaseRepository {
 
-    private $type = 2;
-    private $pathImage = "upload/admin/Product/image";
     public function model()
     {
         return VayVon::class;
@@ -44,37 +42,19 @@ class VayVonRepository extends BaseRepository {
     public function store($params, $request) {
         DB::beginTransaction();
         try {
-            $product = new $this->model;
-            $params['type'] = $this->type;
-            $params['slug'] = Str::slug($params['name'], '-');
-            $slugs = $this->model->where('slug', ''.$params['slug'].'')->first();
-            if($slugs){
-                $params['slug'] = $params['slug'].'-1';
+            $model = new $this->model;
+            if (isset($params['is_pay'])){
+                $params['is_pay'] = $params['is_pay'] ? 1 : 0;
+            } else {
+                $params['is_pay'] = 0;
             }
-            if($request->hasFile('image')) {
-                $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);
+            if (isset($params['status'])){
+                $params['status'] = $params['status'] ? 1 : 0;
+            } else {
+                $params['status'] = 0;
             }
-            $product->fill($params);
-
-            $product->save();
-            if (isset($params['detail_name'])) {
-                $arr = [];
-                foreach ($params['detail_name'] as $key=> $item) {
-                    $image = "";
-                    if (isset($params['detail_image'][$key])) {
-                        $image = $this->saveFile($params['detail_image'][$key], $this->pathImage);
-                    }
-
-                    $arr[] = [
-                        'product_id'=> $product->id,
-                        'name'=> $item,
-                        'image'=>$image,
-                        'link'=> isset($params['detail_link'][$key]) ?$params['detail_link'][$key] : null
-                    ];
-                }
-                ProductDetail::insert($arr);
-            }
-
+            $model->fill($params);
+            $model->save();
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -83,41 +63,26 @@ class VayVonRepository extends BaseRepository {
     }
 
     public function edit($id) {
-        $query = $this->model->where('id', $id)->with('productDetails');
+        $query = $this->model->where('id', $id);
         return $query->firstOrFail();
     }
 
-    public function update($params, $request, $id) {
-        $product = $this->model->findOrFail($id);
+    public function update($params, $id) {
         DB::beginTransaction();
         try {
-            $params['slug'] = Str::slug($params['name'], '-');
-            if($request->hasFile('image')) {
-                $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);
+            $model = $this->model->findOrFail($id);
+            if (isset($params['is_pay'])){
+                $params['is_pay'] = $params['is_pay'] ? 1 : 0;
+            } else {
+                $params['is_pay'] = 0;
             }
-            $product->fill($params);
-            $product->save();
-
-            if (isset($params['detail_name'])) {
-                ProductDetail::where('product_id', $id)->delete();
-                $arr = [];
-                foreach ($params['detail_name'] as $key=> $item) {
-                    $image = "";
-                    if (isset($params['detail_image_hidden'][$key])) {
-                        $image = $params['detail_image_hidden'][$key];
-                    }
-                    if (isset($params['detail_image'][$key])) {
-                        $image = $this->saveFile($params['detail_image'][$key], $this->pathImage);
-                    }
-                    $arr[] = [
-                        'product_id'=> $id,
-                        'name'=> $item,
-                        'image'=>$image,
-                        'link'=> isset($params['detail_link'][$key]) ?$params['detail_link'][$key] : null
-                    ];
-                }
-                ProductDetail::insert($arr);
+            if (isset($params['status'])){
+                $params['status'] = $params['status'] ? 1 : 0;
+            } else {
+                $params['status'] = 0;
             }
+            $model->fill($params);
+            $model->save();
 
             DB::commit();
         } catch (\Exception $exception) {
@@ -130,37 +95,15 @@ class VayVonRepository extends BaseRepository {
         DB::beginTransaction();
         try {
             $this->model->where('id', $id)->delete();
-            ProductDetail::where('product_id', $id)->delete();
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();
             throw $exception;
         }
     }
-    public function saveFile($file, $path) {
-        //get filename with extension
-        $filenamewithextension = $file->getClientOriginalName();
 
-        //get filename without extension
-        $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-
-        //get file extension
-        $extension = $file->getClientOriginalExtension();
-
-        //filename to store
-        $fileNameStore = $filename.'_'.time().'.'.$extension;
-        //Upload File
-        $file->move(public_path($path), $fileNameStore);
-        return $fileNameStore;
+    public function deleteAll($ids) {
+        $this->model->whereIn('id', $ids['ids'])->delete();
     }
 
-    public function generateRandomString($length = 10) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[random_int(0, $charactersLength - 1)];
-        }
-        return $randomString;
-    }
 }

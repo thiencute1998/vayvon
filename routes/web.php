@@ -109,6 +109,7 @@ Route::prefix('admin')->middleware(['checkLogin'])->group(function () {
         Route::get('/edit/{id}', [VayVonController::class, 'edit'])->name('admin-vayvon-edit');
         Route::post('/update/{id}', [VayVonController::class, 'update'])->name('admin-vayvon-update');
         Route::get('/delete/{id}', [VayVonController::class, 'delete'])->name('admin-vayvon-delete');
+        Route::delete('/delete-all', [VayVonController::class, 'deleteAll'])->name('admin-vayvon-delete-all');
         Route::post('/import', [VayVonController::class, 'import'])->name('admin-vayvon-import');
     });
 
