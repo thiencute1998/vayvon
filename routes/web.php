@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\VayVonController;
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Admin\LogoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -111,6 +112,15 @@ Route::prefix('admin')->middleware(['checkLogin'])->group(function () {
         Route::get('/delete/{id}', [VayVonController::class, 'delete'])->name('admin-vayvon-delete');
         Route::delete('/delete-all', [VayVonController::class, 'deleteAll'])->name('admin-vayvon-delete-all');
         Route::post('/import', [VayVonController::class, 'import'])->name('admin-vayvon-import');
+    });
+
+    Route::prefix('logos')->group(function() {
+        Route::get('/', [LogoController::class, 'index'])->name('logos');
+        Route::get('/create', [LogoController::class, 'create'])->name('logos-create');
+        Route::post('/store', [LogoController::class, 'store'])->name('logos-store');
+        Route::get('/edit/{id}', [LogoController::class, 'edit'])->name('logos-edit');
+        Route::post('/update/{id}', [LogoController::class, 'update'])->name('logos-update');
+        Route::get('/delete/{id}', [LogoController::class, 'delete'])->name('logos-delete');
     });
 
 });

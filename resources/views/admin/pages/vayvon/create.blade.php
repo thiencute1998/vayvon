@@ -71,11 +71,11 @@
                                     <div class="row form-group">
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Số lượng khoản vay</label>
-                                            <input type="text" class="form-control" name="amount_loan" placeholder="Số lượng">
+                                            <input type="text" class="form-control" name="amount_loan" value="2500000" placeholder="Số lượng">
                                         </div>
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Số tiền</label>
-                                            <input type="text" class="form-control" name="amount_money" placeholder="Số tiền">
+                                            <input type="text" class="form-control" name="amount_money" value="2500000" placeholder="Số tiền">
                                         </div>
                                     </div>
 
@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Số tiền phải trả</label>
-                                            <input type="text" class="form-control" name="money_pay" placeholder="Số tiền phải trả">
+                                            <input type="text" class="form-control" name="money_pay" value="2500000" placeholder="Số tiền phải trả">
                                         </div>
                                     </div>
                                     <div class="row form-group">
@@ -115,13 +115,13 @@
                                             <label class="form-check-label" name="is_pay" for="inlineCheckbox1">Thanh toán</label>
                                         </div>
                                         <div class="form-check form-check-inline ">
-                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                            <input class="form-check-input" type="checkbox" checked id="inlineCheckbox2" value="option2">
                                             <label class="form-check-label" name="status" for="inlineCheckbox2">Hiển thị</label>
                                         </div>
 
                                         <div class="form-check form-check-inline">
                                             <label for="services" class="col-form-label">STT </label>
-                                            <input type="text" class="form-control" name="stt" placeholder="STT">
+                                            <input type="text" class="form-control" me="nastt" value="1" placeholder="STT" style="margin-left: 5px; width: 68px;">
                                         </div>
                                     </div>
                                     <div class="row form-group">

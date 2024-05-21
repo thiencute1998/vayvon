@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\About;
 use App\Models\Config;
+use App\Models\Logo;
 use App\Models\Product;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
@@ -42,11 +43,13 @@ class AppServiceProvider extends ServiceProvider
 //        $categories = Category::where('status', 1)->where('level', 1)->orderBy('order', 'asc')->get();
 //        // Lien he
         $contactWebsite = About::first();
-        View::composer('*', function ($view) use($config, $menuProducts, $contactWebsite){
+        $logo = Logo::where('status', 1)->first();
+        View::composer('*', function ($view) use($config, $menuProducts, $contactWebsite, $logo){
             $adminLogin = Auth::user();
             $data = [
                 'adminLogin'=> $adminLogin,
                 'config'=> $config,
+                'logoWeb'=> $logo ? $logo : "",
                 'menuProducts'=> $menuProducts,
                 'contactWebsite'=> $contactWebsite
             ];

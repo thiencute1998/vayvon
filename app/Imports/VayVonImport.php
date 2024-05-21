@@ -21,7 +21,11 @@ class VayVonImport implements ToCollection, WithHeadingRow
             $arrVayVon[] = [
                 'user_name'=> $row['ho_ten'],
                 'phone'=> $row['sdt'],
-                'note'=> $row['noi_dung']
+                'note'=> $row['noi_dung'],
+                'amount_loan'=>2500000,
+                'amount_money'=>2500000,
+                'money_pay'=>2500000,
+                'stt'=>1
             ];
         }
         VayVon::insert($arrVayVon);

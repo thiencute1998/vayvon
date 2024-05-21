@@ -60,20 +60,20 @@
                                 @endif
                                 <!-- Tab links -->
                                     <div class="tabs">
-                                        <label class="tablinks active" data-electronic="tab_about">About</label>
-                                        <label class="tablinks" data-electronic="tab_contact">Contact</label>
-                                        <label class="tablinks" data-electronic="tab_quoteimg">Quote img</label>
-                                        <label class="tablinks" data-electronic="tab_quote">Quote</label>
-                                        <label class="tablinks" data-electronic="tab_map">Map</label>
-                                        <label class="tablinks" data-electronic="tab_products">Products</label>
-                                        <label class="tablinks" data-electronic="tab_applications">Applications</label>
+                                        <label class="tablinks active" data-electronic="tab_about">Giới thiệu</label>
+                                        <label class="tablinks" data-electronic="tab_contact">Thanh toán</label>
+{{--                                        <label class="tablinks" data-electronic="tab_quoteimg">Quote img</label>--}}
+{{--                                        <label class="tablinks" data-electronic="tab_quote">Quote</label>--}}
+{{--                                        <label class="tablinks" data-electronic="tab_map">Map</label>--}}
+                                        <label class="tablinks" data-electronic="tab_products">Footer</label>
+{{--                                        <label class="tablinks" data-electronic="tab_applications">Applications</label>--}}
                                     </div>
 
                                     <!-- Tab content -->
                                     <div class="wrapper_tabcontent">
                                         <div id="tab_about" class="tabcontent active">
                                             <div class="form-group">
-                                                <label class="col-form-label">About</label>
+                                                <label class="col-form-label">Giới thiệu</label>
                                                 <textarea id="about" class="form-control" name="about" type="text">
                                             {{ $about ? $about->about : ""}}
                                         </textarea>
@@ -82,55 +82,55 @@
 
                                         <div id="tab_contact" class="tabcontent">
                                             <div class="form-group">
-                                                <label class="col-form-label">Contact</label>
+                                                <label class="col-form-label">Thanh toán</label>
                                                 <textarea id="contact" class="form-control" name="contact" type="text">
                                             {{ $about ? $about->contact : "" }}
                                         </textarea>
                                             </div>
                                         </div>
 
-                                        <div id="tab_quoteimg" class="tabcontent">
-                                            <div class="form-group">
-                                                <label class="col-form-label">Quote img</label>
-                                                <textarea id="quoteimg" class="form-control" name="quoteimg" type="text" >
-                                            {{ $about ? $about->quoteimg : "" }}
-                                        </textarea>
-                                            </div>
-                                        </div>
+{{--                                        <div id="tab_quoteimg" class="tabcontent">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <label class="col-form-label">Quote img</label>--}}
+{{--                                                <textarea id="quoteimg" class="form-control" name="quoteimg" type="text" >--}}
+{{--                                            {{ $about ? $about->quoteimg : "" }}--}}
+{{--                                        </textarea>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
 
-                                        <div id="tab_quote" class="tabcontent">
-                                            <div class="form-group">
-                                                <label class="col-form-label">Quote</label>
-                                                <textarea id="quote" class="form-control" name="quote" type="text" >
-                                            {{ $about ? $about->quote : "" }}
-                                        </textarea>
-                                            </div>
-                                        </div>
+{{--                                        <div id="tab_quote" class="tabcontent">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <label class="col-form-label">Quote</label>--}}
+{{--                                                <textarea id="quote" class="form-control" name="quote" type="text" >--}}
+{{--                                            {{ $about ? $about->quote : "" }}--}}
+{{--                                        </textarea>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
 
-                                        <div id="tab_map" class="tabcontent">
-                                            <div class="form-group">
-                                                <label class="col-form-label">Map</label>
-                                                <textarea id="map" class="form-control" name="map" type="text" >
-                                            {{ $about ? $about->map : "" }}
-                                        </textarea>
-                                            </div>
-                                        </div>
+{{--                                        <div id="tab_map" class="tabcontent">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <label class="col-form-label">Map</label>--}}
+{{--                                                <textarea id="map" class="form-control" name="map" type="text" >--}}
+{{--                                            {{ $about ? $about->map : "" }}--}}
+{{--                                        </textarea>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                         <div id="tab_products" class="tabcontent">
                                             <div class="form-group">
-                                                <label class="col-form-label">Products</label>
+                                                <label class="col-form-label">Footer</label>
                                                 <textarea id="products" class="form-control" name="products" type="text" >
                                             {{ $about ? $about->products : "" }}
                                         </textarea>
                                             </div>
                                         </div>
-                                        <div id="tab_applications" class="tabcontent">
-                                            <div class="form-group">
-                                                <label class="col-form-label">Applications</label>
-                                                <textarea id="applications" class="form-control" name="applications" type="text" >
-                                            {{ $about ? $about->applications : "" }}
-                                        </textarea>
-                                            </div>
-                                        </div>
+{{--                                        <div id="tab_applications" class="tabcontent">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <label class="col-form-label">Applications</label>--}}
+{{--                                                <textarea id="applications" class="form-control" name="applications" type="text" >--}}
+{{--                                            {{ $about ? $about->applications : "" }}--}}
+{{--                                        </textarea>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Submit</button>
@@ -154,11 +154,11 @@
             //var editor1 = new RichTextEditor("#gioithieu");
             var editor2 = new RichTextEditor("#about");
             var editor3 = new RichTextEditor("#contact");
-            var editor4 = new RichTextEditor("#quoteimg");
-            var editor5 = new RichTextEditor("#quote");
-            var editor6 = new RichTextEditor("#map");
+            // var editor4 = new RichTextEditor("#quoteimg");
+            // var editor5 = new RichTextEditor("#quote");
+            // var editor6 = new RichTextEditor("#map");
             var editor7 = new RichTextEditor("#products");
-            var editor8 = new RichTextEditor("#applications");
+            // var editor8 = new RichTextEditor("#applications");
             $('.config-message').delay(5000).fadeOut();
         })
         var tabLinks = document.querySelectorAll(".tablinks");

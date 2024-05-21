@@ -32,6 +32,11 @@ class VayVonRepository extends BaseRepository {
             $created_at = date("Y-m-d", strtotime($searchParams['created_at']));
             $query->WhereRaw('str_to_date(created_at,"%Y-%m-%d") = "'.$created_at.'"');
         }
+        if (isset($searchParams['search'])) {
+            $name = $searchParams['search'];
+            $query->where('phone', 'like', "$name%");
+            $query->orwhere('user_name', 'like', "%$name%");
+        }
         $query->orderBy('updated_at', 'desc');
         return $query->paginate(10);
     }

@@ -28,6 +28,6 @@ class IndexController extends Controller
         if ($data) {
             return redirect()->route('get-pay')->with(['data'=> $data]);
         }
-        return redirect()->back()->withErrors(['msg' => 'Số điện thoại không tồn tại hoặc số điện thoại không được để trống']);
+        return redirect()->back()->withErrors(['msg' => 'Số điện thoại không tồn tại!']);
     }
 }

@@ -10,12 +10,13 @@
                 </div>
             </a> -->
             <div class="logo-header">
-
+                <a href="{{route('index')}}" title="{{$logoWeb ? $logoWeb->name : ""}}" rel="home">
+                    <img width="60" height="75" src="{{asset("upload/admin/logo/". ($logoWeb ? $logoWeb->file_name : ""))}}" class="header_logo header-logo" alt="{{$logoWeb ? $logoWeb->name : ""}}"/>
+                </a>
             </div>
             <div class="menu">
                 <ul class="d-flex align-items-center justify-content-between">
-                    <li><a class="transition " href="dang-nhap-thanh-toan" title="đăng nhập thanh toán">Đăng nhập thanh
-                            toán</a>
+                    <li><a class="transition " href="dang-nhap-thanh-toan" title="đăng nhập thanh toán">Đăng nhập thanh toán</a>
                     </li>
                 </ul>
                 <div id="google_language_translator"></div>
@@ -78,25 +79,22 @@
         <section class="height-tieuchi">
             <div class="container-jn">
                 <div class="row">
-                    <div class="col-md-5 col-lg-5 col-xs-12">
-                        <div class="">
+{{--                    <div class="col-md-5 col-lg-5 col-xs-12">--}}
+{{--                        <div class="">--}}
 
-                            <div class="tieuchi-box">
-                                <div class="tieuchi-img">
-                                    <img id="view-img-" src="upload/photo/banner-new-8751.jpg" alt=""/>
-                                </div>
-                            </div>
+{{--                            <div class="tieuchi-box">--}}
+{{--                                <div class="tieuchi-img">--}}
+{{--                                    <img id="view-img-" src="upload/photo/banner-new-8751.jpg" alt=""/>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                        </div>
-                    </div>
-                    <div class="col-md-7 col-lg-7 col-xs-12 item30">
+{{--                        </div>--}}
+{{--                    </div>--}}
+                    <div class="col-md-12 col-lg-12 col-xs-12 item30">
                         <div class="dkb-box">
-                            <!-- <p style="text-align: justify;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Sau một thời gian dài hoạt động tư vấn pháp luật, dịch vụ pháp lý, Công ty luật TNHH MTV Bảo Quang đã dần khẳng định uy tín về chất lượng chuyên môn của dịch vụ và nhận được sự tín nhiệm, niềm tin của khách hàng là cá nhân cũng như tổ chức, doanh nghiệp về các dịch vụ pháp luật doaanh nghiệp, kinh doanh thương mại, đầu tư, hợp đồng, lao động, tham gia giải quyết tranh tụng trên tất cả các linh vực dân sự, hình sự, hành chính...</span></span></p>
-         -->
-                            Công ty xin thông báo tới quý khách hàng.Quý khách vui lòng chỉ thanh toán vào tài khoảnTRÊN
-                            TRANG.Quý khách lưu ý tuyệt đối KHÔNG THANH TOÁN vào bất kỳ tài khoản nào khác. Nếu quý
-                            khách có nhận được thông tin email/tin nhắn/tin nhắn Zalo tin nhắn Facebook nào đề cập đến
-                            yêu cầu thanh toán tiền qua tài khoản cá nhân
+                            @if($contactWebsite)
+                                {!! $contactWebsite->about !!}
+                            @endif
                         </div>
                     </div>
                 </div>
