@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\SlideController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\VayVonController;
-use App\Http\Controllers\Viewer\IndexController;
+use App\Http\Controllers\Frontend\IndexController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -120,10 +120,14 @@ Route::prefix('admin')->middleware(['checkLogin'])->group(function () {
 
 
 // Viewer
+//Route::get('/', [IndexController::class, 'index'])->name('index');
+//Route::get('/request-a-quote', [IndexController::class, 'quote'])->name('quote');
+//Route::post('/request-quote', [IndexController::class, 'requestQuote'])->name('request-quote');
+//Route::get('/about', [IndexController::class, 'about'])->name('about');
+//Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
+//Route::post('/send-contact', [IndexController::class, 'sendContact'])->name('send-contact');
+//Route::get('/{slug}', [IndexController::class, 'slug'])->name('slug');
+
 Route::get('/', [IndexController::class, 'index'])->name('index');
-Route::get('/request-a-quote', [IndexController::class, 'quote'])->name('quote');
-Route::post('/request-quote', [IndexController::class, 'requestQuote'])->name('request-quote');
-Route::get('/about', [IndexController::class, 'about'])->name('about');
-Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
-Route::post('/send-contact', [IndexController::class, 'sendContact'])->name('send-contact');
-Route::get('/{slug}', [IndexController::class, 'slug'])->name('slug');
+Route::get('/dang-nhap-thanh-toan', [IndexController::class, 'getPay'])->name('get-pay');
+Route::post('/dang-nhap-thanh-toan', [IndexController::class, 'postPay'])->name('post-pay');

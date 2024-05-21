@@ -112,7 +112,7 @@
                                                 {{$vayvon->user_name}}
                                             </td>
                                             <td class="text-center">
-                                                {{$vayvon->amount_money}}
+                                                {{number_format($vayvon->amount_money)}}
                                             </td>
                                             <td class="text-center">
                                                 <input type="checkbox" {{$vayvon->is_pay ? 'checked' : ''}} >

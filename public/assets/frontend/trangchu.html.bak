@@ -1,0 +1,240 @@
+<html lang="vi" class="win-magic svg-magic js cssanimations" data-magic-ua="chrome" data-magic-ua-ver="125" data-magic-engine="webkit" data-magic-engine-ver="537.36" style="height: 100%;"><head><script async="" src="//za.zdn.vn/v3/za.js?19864"></script><script src="https://connect.facebook.net/vi_VN/sdk.js?hash=a6657a6e6b9a0282f0cde4815f9084f8" async="" crossorigin="anonymous"></script><style id="magiczoom-reset-css" type="text/css"></style>
+    
+<!-- Basehref -->
+<base href="">
+<!-- Canonical -->
+<link rel="canonical" href="">
+<!-- Tags -->
+<link href="//www.google-analytics.com" rel="dns-prefetch">
+<link href="//www.googletagmanager.com/" rel="dns-prefetch">
+<!-- Themes -->
+<meta name="theme-color" content="#333333">
+<!-- Chống đổi màu trên IOS -->
+<meta name="format-detection" content="telephone=no">
+<!-- Viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!-- UTF-8 -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- Title, Keywords, Description -->
+<title>Đăng nhập thanh toán</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<!-- Robots -->
+<meta name="robots" content="index,follow">
+<!-- Favicon -->
+<link href="upload/photo/appmd-2892.jpg" rel="shortcut icon" type="image/x-icon">
+<!-- GEO -->
+<meta name="geo.region" content="VN">
+<meta name="geo.placename" content="Hồ Chí Minh">
+<meta name="geo.position" content="10.823099;106.629664">
+<meta name="ICBM" content="10.823099, 106.629664">
+<!-- Author - Copyright -->
+<meta name="revisit-after" content="1 days">
+<meta name="author" content="APP MND">
+<meta name="copyright" content="APP MND - []">
+<!-- Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="APP MND">
+<meta property="og:title" content="Đăng nhập thanh toán">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:image:alt" content="Đăng nhập thanh toán">
+<meta property="og:image:type" content="">
+<meta property="og:image:width" content="">
+<meta property="og:image:height" content="">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="">
+<meta name="twitter:creator" content="APP MND">
+<meta property="og:url" content="">
+<meta property="og:title" content="Đăng nhập thanh toán">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+
+<!-- connect to domain of font files -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<!-- optionally increase loading priority -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&amp;display=swap">
+
+ <!-- Css Files -->
+<link href="style/animate.min.css?v=uJSCEnQ0T" rel="stylesheet">
+<link href="style/bootstrap.css?v=ZxxeapcVt" rel="stylesheet">
+<link href="style/font-awesome.css?v=Owv8PMssRz" rel="stylesheet">
+<link href="style/style.css?v=ohGQISWVbB" rel="stylesheet">
+<link href="style/responsive.css?v=N6Kf17q5HT" rel="stylesheet">
+
+</head>
+<!-- <body class="modal--open"> -->
+<body>
+       
+	   <ul class="h-card hidden"><li class="h-fn fn">APP MND</li><li class="h-org org">APP MND</li><li class="h-tel tel"></li><li><a class="u-url ul" href="https://linkappmnd.com/">https://linkappmnd.com/</a></li></ul>
+	<h1 class="hidden-seoh">LINK APP MND</h1>    <div class="wrap-full">
+        <section id="menu-contain" class="menu-sticky ">
+    <div class="container-jn d-flex align-items-center justify-content-center ">
+        <!-- <a href="#menu" title="" class="menu-responsive">
+            <div class="menu-mobile">
+                <span>
+                    <span></span>
+                </span>
+            </div>
+        </a> -->
+        <div class="logo-header">
+            <a href=""><img onerror="this.src='thumbs/270xx2/assets/images/noimage.png';" src="upload/photo/appmd-8958.jpg" alt="APP MND"/></a>
+        </div>
+        <div class="menu">
+           <ul class="d-flex align-items-center justify-content-between">
+                <li><a class="transition " href="dang-nhap-thanh-toan" title="đăng nhập thanh toán">Đăng nhập thanh toán</a>
+                                    </li>
+            </ul>
+            <div id="google_language_translator"></div>
+            <div class="btn-top-info">
+                <div class="search show-search">
+                    <span><img src="assets/images/search.svg" alt="Tìm kiếm sản phẩm"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- <div class="slideshow">
+
+    <div class="home-slider owl-carousel owl-theme owl-carousel-loop in-home" data-animateOut="fadeOut" data-animateIn="fadeIn" data-dot="0" data-nav='1' data-loop='1' data-play='1' data-lg-items='1' data-md-items='1' data-sm-items='1' data-xs-items="1" data-margin='0'>
+
+        
+    </div>
+
+</div> -->
+
+<section class="canhgiua">
+
+    <section class="HowDoIt_section">
+
+        <h2 class="HowDoIt_title">Hỗ trợ tư vấn ngân hàng tốt nhất - Phù hợp với nhu cầu khách hàng</h2>
+
+        <div class="HowDoIt_items">
+
+            <div class="HowDoIt_item">
+
+                <img style="width: 80px;" src="https://linkappmnd.com/upload/photo/chuyen-gia.png" alt="linkappmnd">
+
+                <p class="HowDoIt_itemText">Chuyên gia tư vấn Miễn phí - Chuyên nghiệp</p>
+
+            </div>
+
+            <div class="HowDoIt_item">
+
+            <img style="width: 80px;" src="https://linkappmnd.com/upload/photo/quy-trinh.png" alt="linkappmnd">
+
+                <p class="HowDoIt_itemText">Quy trình đơn giản &amp; Tiết kiệm thời gian khách hàng</p>
+
+            </div>
+
+            <div class="HowDoIt_item">
+
+            <img style="width: 80px;" src="https://linkappmnd.com/upload/photo/tu-van.png" alt="linkappmnd">
+
+                <p class="HowDoIt_itemText">Đăng ký nhận tư vấn miễn phí</p>
+
+            </div>
+
+        </div>
+
+        <!-- <div class="d-flex justify-content-center align-items-center">
+
+                    <a href="dang-ki.html" id="Loan-button" class="ButtonWidget_buttonWidget LoanButton_loanButton HowDoIt_loanButton" role="button" type="button">Đăng Ký Hồ Sơ Vay</a>
+
+                </div> -->
+
+    </section>
+
+    </section>
+
+
+
+
+        
+        <section class="canhgiua">
+<section class="height-tieuchi">
+	<div class="container-jn">
+		<div class="row">
+			<div class="col-md-5 col-lg-5 col-xs-12">
+			<div class="">
+											
+							<div class="tieuchi-box">
+								<div class="tieuchi-img">
+									<img id="view-img-" src="upload/photo/banner-new-8751.jpg" alt=""/>
+								</div>
+							</div>
+					
+									</div>
+			</div>
+			<div class="col-md-7 col-lg-7 col-xs-12 item30">
+				<div class="dkb-box">
+					<!-- <p style="text-align: justify;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Sau một thời gian dài hoạt động tư vấn pháp luật, dịch vụ pháp lý, Công ty luật TNHH MTV Bảo Quang đã dần khẳng định uy tín về chất lượng chuyên môn của dịch vụ và nhận được sự tín nhiệm, niềm tin của khách hàng là cá nhân cũng như tổ chức, doanh nghiệp về các dịch vụ pháp luật doaanh nghiệp, kinh doanh thương mại, đầu tư, hợp đồng, lao động, tham gia giải quyết tranh tụng trên tất cả các linh vực dân sự, hình sự, hành chính...</span></span></p>
+ -->
+					Công ty xin thông báo tới quý khách hàng.Quý khách vui lòng chỉ thanh toán vào tài khoảnTRÊN TRANG.Quý khách lưu ý tuyệt đối KHÔNG THANH TOÁN vào bất kỳ tài khoản nào khác. Nếu quý khách có nhận được thông tin email/tin nhắn/tin nhắn Zalo tin nhắn Facebook nào đề cập đến yêu cầu thanh toán tiền qua tài khoản cá nhân
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</section>
+<section id="news-contain">
+	<div class="container-jn">
+		<div class="news-page">
+			<div class="d-flex flex-wrap justify-content-start">
+							</div>
+		</div>
+	</div>
+</section>        
+<section class="footer">
+    <div class="container-jn">
+        <div class="footer-article">
+            <div class="d-flex flex-wrap align-items-start justify-content-between">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 col-xs-12">
+                    <div class="logo-footer" style="text-align:center">
+                        <a href=""><img onerror="this.src='thumbs/270xx2/assets/images/noimage.png';" src="upload/photo/appmd-3110.jpg" alt="APP MND"/></a>
+                    </div>
+                    <div class="t-footer">
+                                            </div>
+                    </div>
+                    <div class="col-md-8 col-lg-8 col-xs-12">
+                        <p>8:30 - 17:30 Thứ Hai đến Thứ Sáu hàng tuần (trừ các ngày lễ, Thứ 7 và Chủ Nhật)</p>
+                    </div>
+                   
+                </div>
+          
+               
+  
+                
+                <!-- <div class="footer-news">
+                    <h2 class="title-footer">Sơ đồ trang</h2>
+                    <ul class="footer-ul cen2">
+                        <li><a href="" class="text-decoration-none">Trang chủ</a></li>
+                        <li><a href="gioi-thieu" class="text-decoration-none">Giới thiệu</a></li>
+                        <li><a href="linh-vuc" class="text-decoration-none">Lĩnh vực</a></li>
+                        <li><a href="nhan-su" class="text-decoration-none">Nhân sự</a></li>
+                        <li><a href="tai-lieu" class="text-decoration-none">Tài liệu</a></li>
+                        <li><a href="lien-he" class="text-decoration-none">Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-news">
+                    <h2 class="title-footer text-center">Liên kết web</h2>
+                    <ul class="social social-bottom d-flex flex-wrap align-items-center justify-content-start">
+                                            </ul>
+                </div> -->
+               
+            </div>
+        </div>
+    </div>
+</section>    </div>
+
+
+<!-- Js Files -->
+<script type="text/javascript" src="js/jquery.min.js?v=UAMfaY1wsQ"></script>
+<script type="text/javascript" src="js/bootstrap.js?v=sfe9D2s9CL"></script>
+
+
+</body></html>
