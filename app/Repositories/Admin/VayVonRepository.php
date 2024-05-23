@@ -38,7 +38,7 @@ class VayVonRepository extends BaseRepository {
             $query->orwhere('user_name', 'like', "%$name%");
         }
         $query->orderBy('updated_at', 'desc');
-        return $query->paginate(10);
+        return $query->paginate(100);
     }
 
     /**
