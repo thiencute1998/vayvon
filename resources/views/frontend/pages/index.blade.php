@@ -37,43 +37,43 @@
 
 </div> -->
 
-    <section class="canhgiua">
+{{--    <section class="canhgiua">--}}
 
-        <section class="HowDoIt_section">
+{{--        <section class="HowDoIt_section">--}}
 
-            <h2 class="HowDoIt_title">Hỗ trợ tư vấn ngân hàng tốt nhất - Phù hợp với nhu cầu khách hàng</h2>
+{{--            <h2 class="HowDoIt_title">Hỗ trợ tư vấn ngân hàng tốt nhất - Phù hợp với nhu cầu khách hàng</h2>--}}
 
-            <div class="HowDoIt_items">
+{{--            <div class="HowDoIt_items">--}}
 
-                <div class="HowDoIt_item">
+{{--                <div class="HowDoIt_item">--}}
 
-                    <img style="width: 80px;" src="https://linkappmnd.com/upload/photo/chuyen-gia.png" alt="linkappmnd">
+{{--                    <img style="width: 80px;" src="https://linkappmnd.com/upload/photo/chuyen-gia.png" alt="linkappmnd">--}}
 
-                    <p class="HowDoIt_itemText">Chuyên gia tư vấn Miễn phí - Chuyên nghiệp</p>
+{{--                    <p class="HowDoIt_itemText">Chuyên gia tư vấn Miễn phí - Chuyên nghiệp</p>--}}
 
-                </div>
+{{--                </div>--}}
 
-                <div class="HowDoIt_item">
+{{--                <div class="HowDoIt_item">--}}
 
-                    <img style="width: 80px;" src="https://linkappmnd.com/upload/photo/quy-trinh.png" alt="linkappmnd">
+{{--                    <img style="width: 80px;" src="https://linkappmnd.com/upload/photo/quy-trinh.png" alt="linkappmnd">--}}
 
-                    <p class="HowDoIt_itemText">Quy trình đơn giản &amp; Tiết kiệm thời gian khách hàng</p>
+{{--                    <p class="HowDoIt_itemText">Quy trình đơn giản &amp; Tiết kiệm thời gian khách hàng</p>--}}
 
-                </div>
+{{--                </div>--}}
 
-                <div class="HowDoIt_item">
+{{--                <div class="HowDoIt_item">--}}
 
-                    <img style="width: 80px;" src="https://linkappmnd.com/upload/photo/tu-van.png" alt="linkappmnd">
+{{--                    <img style="width: 80px;" src="https://linkappmnd.com/upload/photo/tu-van.png" alt="linkappmnd">--}}
 
-                    <p class="HowDoIt_itemText">Đăng ký nhận tư vấn miễn phí</p>
+{{--                    <p class="HowDoIt_itemText">Đăng ký nhận tư vấn miễn phí</p>--}}
 
-                </div>
+{{--                </div>--}}
 
-            </div>
+{{--            </div>--}}
 
-        </section>
+{{--        </section>--}}
 
-    </section>
+{{--    </section>--}}
 
     <section class="canhgiua">
         <section class="height-tieuchi">
