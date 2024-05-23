@@ -60,4 +60,14 @@ class VayVonController extends Controller
         $data = $excel->import(new VayVonImport(), $request->file('file'));
         return redirect()->back()->with('import-success', 'Import thành công !!!');
     }
+
+    public function isPay(Request $request){
+        $this->repository->isPay($request->only('id', 'is_pay'));
+        return response()->json(['code' => 200]);
+    }
+
+    public function isStatus(Request $request){
+        $this->repository->isStatus($request->only('id', 'is_status'));
+        return response()->json(['code' => 200]);
+    }
 }

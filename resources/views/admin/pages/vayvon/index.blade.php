@@ -72,7 +72,7 @@
                                 <h4 class="header-title">Danh sách vay vốn</h4>
                             </div>
                             <div>
-                                <a class="btn btn-danger trash-all">
+                                <a class="btn btn-danger trash-all" style="color: #FFF;">
                                     <i class="ti-trash"></i><span>Xóa tất cả</span>
                                 </a>
                                 <a class="btn btn-success" href="{{route('admin-vayvon-import')}}" data-toggle="modal" data-target="#fileImportModal">
@@ -115,10 +115,10 @@
                                                 {{number_format($vayvon->amount_money)}}
                                             </td>
                                             <td class="text-center">
-                                                <input type="checkbox" {{$vayvon->is_pay ? 'checked' : ''}} >
+                                                <input type="checkbox" data-id="{{$vayvon->id}}" class="is_pay" {{$vayvon->is_pay ? 'checked' : ''}} >
                                             </td>
                                             <td class="text-center">
-                                                <input type="checkbox" {{$vayvon->status ? 'checked' : ''}} >
+                                                <input type="checkbox" data-id="{{$vayvon->id}}" class="is_status" {{$vayvon->status ? 'checked' : ''}} >
                                             </td>
                                             <td style="vertical-align: middle;">
                                                 <a href="{{ route('admin-vayvon-edit', ['id'=> $vayvon->id]) }}">
@@ -221,6 +221,44 @@
                     alert('Chọn ít nhất 1 item');
                 }
 
+            });
+
+            $('.is_pay').on('click', function() {
+                let is_pay = $(this).is(":checked");
+                $.ajax({
+                    url: '{{ route("admin-is-pay") }}',
+                    type: 'POST',
+                    data: {
+                        id: $(this).data('id'),
+                        is_pay: is_pay,
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+                        console.log('oke')
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+
+            $('.is_status').on('click', function() {
+                let is_status = $(this).is(":checked");
+                $.ajax({
+                    url: '{{ route("admin-is-status") }}',
+                    type: 'POST',
+                    data: {
+                        id: $(this).data('id'),
+                        is_status: is_status,
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+                        console.log('oke')
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
+                    }
+                });
             });
         })
     </script>

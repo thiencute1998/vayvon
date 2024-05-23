@@ -111,4 +111,13 @@ class VayVonRepository extends BaseRepository {
         $this->model->whereIn('id', $ids['ids'])->delete();
     }
 
+    public function isPay($arr) {
+        $arr['is_pay'] = ($arr['is_pay'] === 'true') ? 1 : 0;
+        $this->model->where('id', $arr['id'])->update(['is_pay'=> $arr['is_pay']]);
+    }
+
+    public function isStatus($arr) {
+        $arr['is_status'] = ($arr['is_status'] === 'true') ? 1 : 0;
+        $this->model->where('id', $arr['id'])->update(['status'=> $arr['is_status']]);
+    }
 }

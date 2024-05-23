@@ -112,6 +112,8 @@ Route::prefix('admin')->middleware(['checkLogin'])->group(function () {
         Route::get('/delete/{id}', [VayVonController::class, 'delete'])->name('admin-vayvon-delete');
         Route::delete('/delete-all', [VayVonController::class, 'deleteAll'])->name('admin-vayvon-delete-all');
         Route::post('/import', [VayVonController::class, 'import'])->name('admin-vayvon-import');
+        Route::post('/is-pay', [VayVonController::class, 'isPay'])->name('admin-is-pay');
+        Route::post('/is-status', [VayVonController::class, 'isStatus'])->name('admin-is-status');
     });
 
     Route::prefix('logos')->group(function() {
@@ -141,3 +143,4 @@ Route::prefix('admin')->middleware(['checkLogin'])->group(function () {
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/dang-nhap-thanh-toan', [IndexController::class, 'getPay'])->name('get-pay');
 Route::post('/dang-nhap-thanh-toan', [IndexController::class, 'postPay'])->name('post-pay');
+
